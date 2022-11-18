@@ -1,0 +1,17 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+}
+
+body>img{
+   margin: auto;
+   width: 1000px ;
+   background-size: contain;
+}
+ul{
+    background-color: rgb(35, 34, 34);
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
