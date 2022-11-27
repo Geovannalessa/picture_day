@@ -1,43 +1,58 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: black;
+ background-color: black;
+   
     color: rgb(255, 255, 255);
-    display: flex;
 }
 
-/* imagem */
-section {
-    background-position: center;
-    background-image: url('https://apod.nasa.gov/apod/image/1701/IC443HubblePalette2_8x10flat4bColes.jpg');
+#imagem {
+    margin-top: 1%;
+    display: flex;
+   justify-content: center;
+}
+
+#imagem>img {
+ width: 900px;
+ border-radius: 20px;
+}
+main{
+    
+    /* background-image:url('https://images.pexels.com/photos/8022693/pexels-photo-8022693.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load') ;
     width: 100vw;
     height: 100vh;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-size:cover;
+    background-repeat: no-repeat; */
 }
-
-/* texto */
 section>p {
+    /* overflow-y: scroll; */
+    padding: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
-    background: radial-gradient(rgba(0, 0, 0, 0.725), rgba(0, 0, 0, 0.515), rgba(60, 2, 2, 0.113));
-    padding: 50px;
-    text-align: center;
-    margin: 0% auto;
-    font-size: 35px;
-    margin-top: 1%;
+    /* background-image:url('https://www.pexels.com/pt-br/foto/planeta-terra-220201/') ; */
+    
+    background: radial-gradient(rgba(0, 0, 0, 0.725), rgba(0, 0, 0, 0.672), rgba(0, 0, 0, 0.721));
+    font-size: 30px;
+
     letter-spacing: 3px;
+    border: ridge rgba(178, 55, 231, 0.501) 2px;
+    animation-name: borda;
+    animation-delay: 6s;
+    animation-duration: 47s;
+    animation-iteration-count: infinite;
 }
 
 ul {
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(7, 5, 5, 0.877);
+    border-radius: 20px;
+    height: 40px;
+    align-items: center;
     padding: 0%;
     list-style: none;
     display: flex;
-    align-items: flex-end;
+
     justify-content: space-evenly;
-    margin: 0px auto;
-    width: 1000px;
+
     padding: 5px 0px;
     border: dotted rgba(0, 0, 255, 0.081) 2px;
     animation-name: borda;
@@ -72,7 +87,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #date:hover {
-    
     cursor: pointer;
     background-color: rgba(1, 21, 14, 0.42);
     transition: 0.6s;
@@ -80,34 +94,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @keyframes borda {
     0% {
-        border: dotted rgba(0, 0, 255, 0.501) 2px;
+        border: ridge rgba(0, 0, 255, 0.501) 2px;
     }
 
     40% {
-        border: dotted rgba(245, 114, 197, 0.618) 2px;
+        border: ridge rgba(245, 114, 197, 0.618) 2px;
     }
 
     50% {
-        border: dotted rgba(0, 128, 0, 0.521) 2px;
+        border: ridge rgba(0, 128, 0, 0.521) 2px;
     }
 
     60% {
-        border: dotted rgba(0, 128, 105, 0.508) 2px;
+        border: ridge rgba(0, 128, 105, 0.508) 2px;
     }
 
     65% {
-        border: dotted rgba(0, 0, 255, 0.081) 2px;
+        border: ridge rgba(0, 0, 255, 0.081) 2px;
     }
 
     70% {
-        border: dotted rgba(73, 0, 128, 0.612) 2px;
+        border: ridge rgba(73, 0, 128, 0.612) 2px;
     }
 
     80% {
-        border: dotted rgba(128, 119, 0, 0.546) 2px;
+        border: ridge rgba(128, 119, 0, 0.546) 2px;
     }
 
     100% {
-        border: rgba(91, 6, 6, 0.612) dotted 2px;
+        border: rgba(91, 6, 6, 0.612) ridge 2px;
     }
 }

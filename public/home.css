@@ -1,79 +1,100 @@
-body{
+body {
     margin: 0%;
     padding: 0%;
     background-color: black;
+    color: rgb(255, 255, 255);
+    display: flex;
 }
-body>img{
-   display: flex;
-   margin: auto;
-   width: 1000px ;
-   background-size: contain;
+
+/* imagem */
+section {
+    background-position: center;
+    background-image: url('https://apod.nasa.gov/apod/image/1701/IC443HubblePalette2_8x10flat4bColes.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-ul{
+
+ul {
+    background-color: rgba(0, 0, 0, 0.575);
     padding: 0%;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;  
-    margin:0px auto;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin: 0px auto;
     width: 1000px;
     padding: 5px 0px;
-}
-ul{
     border: dotted rgba(0, 0, 255, 0.081) 2px;
-   animation-name: borda;
-   animation-delay: 6s;
-   animation-duration: 47s;
-   animation-iteration-count: infinite;
+    animation-name: borda;
+    animation-delay: 6s;
+    animation-duration: 47s;
+    animation-iteration-count: infinite;
 }
 
-#calendario{
+#calendario {
     margin: auto 0px;
     height: 22px;
     border: 1px solid rgba(255, 255, 255, 0.002);
 }
-#date{
+
+#date {
     background-color: rgba(255, 255, 255, 0);
-    color: rgba(255, 255, 255, 0.485);
+    color: rgb(255, 255, 255);
     border: 0px;
     font-size: 20px;
     margin: auto;
 }
-.icones:hover{
-    background-color: rgba(59, 97, 83, 0.632);
-   transition: 0.6s;
+
+.icones:hover {
+    background-color: rgba(1, 20, 33, 0.589);
+    transition: 0.6s;
     border-radius: 6px;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(1000%) sepia(1%) saturate(1000%) hue-rotate(20deg);
-  }
-  input[type="date"]::-webkit-calendar-picker-indicator:hover{
-    background-color: rgba(59, 97, 83, 0.164);
-   transition: 0.6s;
-  }
+}
+
+#date:hover {
+    
+    cursor: pointer;
+    background-color: rgba(1, 21, 14, 0.42);
+    transition: 0.6s;
+}
+
 @keyframes borda {
-    0%{
-        border: dotted rgba(0, 0, 255, 0.156) 2px;
+    0% {
+        border: dotted rgba(0, 0, 255, 0.501) 2px;
     }
-    40%{
-        border: dotted rgba(245, 114, 197, 0.09) 2px;
+
+    40% {
+        border: dotted rgba(245, 114, 197, 0.618) 2px;
     }
-    50%{
-        border: dotted rgba(0, 128, 0, 0.114) 2px;
+
+    50% {
+        border: dotted rgba(0, 128, 0, 0.521) 2px;
     }
-    60%{
-        border: dotted rgba(0, 128, 105, 0.135) 2px;
+
+    60% {
+        border: dotted rgba(0, 128, 105, 0.508) 2px;
     }
-    65%{
+
+    65% {
         border: dotted rgba(0, 0, 255, 0.081) 2px;
     }
-    70%{
-        border: dotted rgba(73, 0, 128, 0.175) 2px;
+
+    70% {
+        border: dotted rgba(73, 0, 128, 0.612) 2px;
     }
-    80%{
-        border: dotted rgba(128, 119, 0, 0.093) 2px;
+
+    80% {
+        border: dotted rgba(128, 119, 0, 0.546) 2px;
     }
-    100%{
-        border: rgba(91, 6, 6, 0.202) dotted 2px;
+
+    100% {
+        border: rgba(91, 6, 6, 0.612) dotted 2px;
     }
 }
