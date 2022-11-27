@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "node": "^19.1.0"
+  },
+  "name": "y",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geovannalessa/picture_day.git"
+  },
+  "author": "Geovanna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geovannalessa/picture_day/issues"
+  },
+  "homepage": "https://github.com/Geovannalessa/picture_day#readme",
+  "description": ""
+}
