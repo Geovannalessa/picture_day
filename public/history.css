@@ -1,40 +1,27 @@
 body {
     margin: 0%;
     padding: 0%;
- background-color: black;
-   
+    background-color: black;
     color: rgb(255, 255, 255);
 }
 
-#imagem {
-    margin-top: 1%;
-    display: flex;
-   justify-content: center;
+body::-webkit-scrollbar {
+    background-color: rgb(0, 0, 0);
 }
 
-#imagem>img {
- width: 900px;
- border-radius: 20px;
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(62, 35, 71, 0.469);
+    border-radius: 20px;
+    border: 3px solid #ac7b1100;
+    height: 20px;
 }
-main{
 
-    /* background-image:url('https://images.pexels.com/photos/8022693/pexels-photo-8022693.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load') ;
-    width: 100vw;
-    height: 100vh;
-    background-size:cover;
-    background-repeat: no-repeat; */
+body::-webkit-scrollbar-track {
+    background: #000000f0;
+    width: 1px;
 }
-section>p {
-    /* overflow-y: scroll; */
-    padding: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    /* background-image:url('https://www.pexels.com/pt-br/foto/planeta-terra-220201/') ; */
-    
-    background: radial-gradient(rgba(0, 0, 0, 0.725), rgba(0, 0, 0, 0.672), rgba(0, 0, 0, 0.721));
-    font-size: 30px;
 
-    letter-spacing: 3px;
+main {
     border: ridge rgba(178, 55, 231, 0.501) 2px;
     animation-name: borda;
     animation-delay: 6s;
@@ -44,65 +31,101 @@ section>p {
 
 ul {
     background-color: rgba(7, 5, 5, 0.877);
-    border-radius: 20px;
-    height: 40px;
+    border-radius: 90px;
+    border-left-style: dotted;
+    border-right-style: dotted;
+    border-color: rgba(255, 255, 255, 0.336);
+
+    display: flex;
     align-items: center;
+    justify-content: space-around;
+    height: 200px;
     padding: 0%;
     list-style: none;
-    display: flex;
-
-    justify-content: space-evenly;
-
-    padding: 5px 0px;
-    border: dotted rgba(0, 0, 255, 0.081) 2px;
-    animation-name: borda;
-    animation-delay: 6s;
-    animation-duration: 47s;
-    animation-iteration-count: infinite;
 }
 
+#logo {
+    width: 200px;
+}
+#iconeImagem{
+    width: 200px;
+    display: flex;
+   justify-content: center;
+}
+#iconeImagemdnv{
+    filter: brightness(50%);
+    width: 60px;
+}
+#iconeCalendario{
+    cursor:auto;
+    width: 57px;
+}
 #calendario {
+    width: 200px;
+    filter: brightness(50%);
+    display: flex;
+    flex-direction: column;
     margin: auto 0px;
-    height: 22px;
+    height:fit-content;
+    align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.002);
 }
 
 #date {
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(255, 255, 255);
+    background-color: rgba(99, 41, 41, 0);
+    color: rgba(255, 255, 255, 0.695);
     border: 0px;
-    font-size: 20px;
+    font-size: 17px;
     margin: auto;
-}
-
-.icones:hover {
-    background-color: rgba(1, 20, 33, 0.589);
-    transition: 0.6s;
-    border-radius: 6px;
+    width: fit-content;
+    cursor: pointer;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    filter: invert(0.8) brightness(1000%) sepia(1%) saturate(1000%) hue-rotate(20deg);
+    display: none;
 }
 
-#date:hover {
-    cursor: pointer;
-    background-color: rgba(1, 21, 14, 0.42);
+#calendario:hover,#iconeImagemdnv:hover {
+    filter: brightness(90%);
     transition: 0.6s;
+    cursor: pointer;
+    transition: 0.6s;
+    color: aliceblue;
+}
+
+#imagem {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+#imagem>img {
+    width: 600px;
+    border-radius: 20px;
+}
+
+section:nth-child(2) {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    background: radial-gradient(rgba(0, 0, 0, 0.725), rgba(0, 0, 0, 0.672), rgba(0, 0, 0, 0.721));
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 3px;
 }
 
 @keyframes borda {
     0% {
-        border: ridge rgba(0, 0, 255, 0.501) 2px;
+        border: ridge rgba(0, 0, 255, 0.375) 2px;
+
     }
 
     40% {
-        border: ridge rgba(245, 114, 197, 0.618) 2px;
+        border: ridge rgba(245, 114, 197, 0.478) 2px;
     }
 
     50% {
-        border: ridge rgba(0, 128, 0, 0.521) 2px;
+        border: ridge rgba(0, 128, 0, 0.374) 2px;
     }
 
     60% {
@@ -114,7 +137,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     70% {
-        border: ridge rgba(73, 0, 128, 0.612) 2px;
+        border: ridge rgba(73, 0, 128, 0.498) 2px;
     }
 
     80% {
