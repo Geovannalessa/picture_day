@@ -16,77 +16,78 @@
 <body>
     <header>
         <ul>
-            <li id="calendario">
+            <li class="calendario" id="calendario">
                 <img id="iconeCalendario" src="https://www.reshot.com/preview-assets/icons/XKRBJ7E6WC/schedule-XKRBJ7E6WC.svg" alt="">
-                <input id="date" type="date">
+                <input id="date" type="date" >
             </li>
             <li>
-                <img id="logo" src="img/Bege Flor Superminimalismo Texto Curvado Logotipo.png" alt="">
+                <img id="logo" src="./public/img/Bege Flor Superminimalismo Texto Curvado Logotipo.png" alt="">
             </li>
             <li id="iconeImagem">
                 <button id="button">
-                    <img id="iconeImagemdnv" src="https://www.reshot.com/preview-assets/icons/EQCLB6AMXP/image-EQCLB6AMXP.svg" alt="">
+                    <img id="iconeImagemdnv" src="https://www.reshot.com/preview-assets/icons/XCG3UAVP6Z/note-XCG3UAVP6Z.svg" alt="">
                 </button>
-                
             </li>
         </ul>
     </header>
-    <div id="container"></div>
-    <main>
-        <section id="imagem">
-            <img src="https://apod.nasa.gov/apod/image/1701/IC443HubblePalette2_8x10flat4bColes.jpg" alt="">
-        </section>
-        <section>
-            <h3>Sharpless 249 and the Jellyfish Nebula</h3>
-            <h4>Image Credit & Copyright: Eric Coles</h4>
-            <p>
-                <strong>Explanation:</strong>  Normally faint and elusive, the Jellyfish Nebula is caught in this alluring telescopic
-                mosaic. The scene is anchored below by bright star Eta Geminorum, at the foot of the celestial twin,
-                while the Jellyfish Nebula is the brighter arcing ridge of emission with tentacles dangling below
-                and left of center. In fact, the cosmic jellyfish is part of bubble-shaped supernova remnant IC 443,
-                the expanding debris cloud from a massive star that exploded. Light from the explosion first reached
-                planet Earth over 30,000 years ago. Like its cousin in astrophysical waters the Crab Nebula
-                supernova remnant, the Jellyfish Nebula is known to harbor a neutron star, the remnant of the
-                collapsed stellar core. An emission nebula cataloged as Sharpless 249 fills the field at the upper
-                right. The Jellyfish Nebula is about 5,000 light-years away. At that distance, this narrowband
-                composite image presented in the Hubble Palette would be about 300 light-years across.
-                Explanation: Normally faint and elusive, the Jellyfish Nebula is caught in this alluring telescopic
-                mosaic. The scene is anchored below by bright star Eta Geminorum, at the foot of the celestial twin,
-                while the Jellyfish Nebula is the brighter arcing ridge of emission with tentacles dangling below
-                and left of center. In fact, the cosmic jellyfish is part of bubble-shaped supernova remnant IC 443,
-                the expanding debris cloud from a massive star that exploded. Light from the explosion first reached
-                planet Earth over 30,000 years ago. Like its cousin in astrophysical waters the Crab Nebula
-                supernova remnant, the Jellyfish Nebula is known to harbor a neutron star, the remnant of the
-                collapsed stellar core. An emission nebula cataloged as Sharpless 249 fills the field at the upper
-                right. The Jellyfish Nebula is about 5,000 light-years away. At that distance, this narrowband
-                composite image presented in the Hubble Palette would be about 300 light-years across.
 
+    <main>
+        <section id="container"></section>
+        
+        <section>
+            <p id="explanation">
+                Escolha uma <i id="dataPalavra"> data</i>  e clique no icone  <i id="notePalavra"> notes</i>!
+                <br>
+                <i><strong>
+                    Após dê reload!
+                </strong></i>
             </p>
         </section>
-    </main>
-    
 
+    </main>
     <script>
         const button = document.getElementById('button');
-       
-        // const dateInput = document.getElementById('date');
-        button.addEventListener("click", ()=>{api()});
+        const dataPalavra = document.getElementById("dataPalavra")
+        const notePalavra = document.getElementById("notePalavra")
+        const calendario = document.getElementById('calendario');
+        const note = document.getElementById("iconeImagemdnv");
 
+        button.addEventListener("click", ()=>{api()});
+        dataPalavra.addEventListener("mouseover",mudarCorDate)    
+        dataPalavra.addEventListener("mouseout",tirarCorDate)  
+        notePalavra.addEventListener("mouseover",mudarCorNote)    
+        notePalavra.addEventListener("mouseout",tirarCorNote)  
         async function api(){
             const key = '7r4h5XIPQTRWXCg7yDfCGdAyPP8Qslu8wUud3tXf';
             const dateInput = document.getElementById('date').value;
             const data = await fetch (`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${dateInput}`);
             const result = await data.json();
-            
             const dados = result;
             console.log(result);
             usarApi(dados);
         }
         function usarApi(dados){
-           document.querySelector("#container").innerHTML = dados.explanation;
-           document.querySelector("#container").innerHTML += `<img src="${dados.url}">`;
+            document.querySelector("#container").innerHTML += ` <button onClick="window.location.reload()"> reload  </button>`;
+            document.querySelector("#container").innerHTML += 
+            `<section id="imagem">
+                <img src="${dados.url}" alt="">
+            </section>`;
+            document.querySelector("#container").innerHTML += ` <h3> ${dados.title}  </h3>`;
+            document.querySelector("#container").innerHTML += ` <h4> Image Credit & Copyright: ${dados.copyright}  </h4>`;
+            document.getElementById("explanation").innerHTML = `<strong>Explanation:</strong> ${dados.explanation}` ;
         }
-
+        function mudarCorDate(){
+            calendario.style.filter = 'brightness(100%)';
+        }
+        function tirarCorDate(){
+            calendario.style.filter = 'brightness(50%)';
+        }
+        function mudarCorNote(){
+            note.style.filter = 'brightness(100%)';
+        }
+        function tirarCorNote(){
+            note.style.filter = 'brightness(50%)';
+        }
     </script>
 </body>
 
