@@ -1,8 +1,18 @@
+
+
 body {
     margin: 0%;
     padding: 0%;
-   background-color: black;
     color: rgb(255, 255, 255);
+  background-color: black;
+    background-size:100%;
+    background-repeat: no-repeat;
+    border: ridge rgba(0, 128, 0, 0.374) 2px;
+    animation-name: borda;
+    animation-delay: 6s;
+    animation-duration: 47s;
+    animation-iteration-count: infinite;
+    
 }
 
 body::-webkit-scrollbar {
@@ -21,31 +31,31 @@ body::-webkit-scrollbar-track {
     width: 1px;
 }
 
-main {
-    border: ridge rgba(178, 55, 231, 0.501) 2px;
-    animation-name: borda;
-    animation-delay: 6s;
-    animation-duration: 47s;
-    animation-iteration-count: infinite;
+
+header{
+    background-image: url('https://apod.nasa.gov/apod/image/2212/Pleiades_Estes_1080.jpg') ;
+    background-size: contain;
+    height: 156px;
+    margin-bottom: 80px;
 }
 
 ul {
-    background-color: rgba(7, 5, 5, 0.877);
-    border-radius: 90px;
-    border-left-style: dotted;
-    border-right-style: dotted;
-    border-color: rgba(255, 255, 255, 0.336);
-
+    background:radial-gradient(rgba(38, 1, 1, 0.522), rgba(0, 0, 0, 0.741), rgb(0, 0, 0));
+    
+ 
+    height: 182px;
     display: flex;
-    align-items: center;
+    
     justify-content: space-around;
-    height: 270px;
+    
     padding: 0%;
+    margin: 0%;
+    
     list-style: none;
 }
 
 #logo {
-    width: 280px;
+    width: 182px;
 }
 
 #iconeImagem {
@@ -55,35 +65,37 @@ ul {
 }
 
 #iconeImagemdnv {
-    filter: brightness(50%);
-    width: 65px;
+    filter: brightness(60%) ;
+    width: 55px;
 }
 
 #iconeCalendario {
     cursor: auto;
-    width: 87px;
+    width: 73px;
 }
 
 #calendario {
     width: inherit;
-    filter: brightness(50%);
+    filter: brightness(60%);
     display: flex;
     flex-direction: column;
     margin: auto 0px;
     height: fit-content;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.002);
+   
 }
-.calendario{
-    filter: brightness(90%);
-    transition: 0.6s;
+
+.calendario {
     cursor: pointer;
     transition: 0.6s;
-    color: aliceblue;
+    filter: brightness(90%);
+    transition: 0.6s;
+    color: rgb(254, 254, 254);
 }
+
 #date {
     background-color: rgba(99, 41, 41, 0);
-    color: rgba(255, 255, 255, 0.695);
+    color: rgb(255, 255, 255);
     border: 0px;
     font-size: 27px;
     margin: auto;
@@ -94,44 +106,51 @@ ul {
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(0.8) brightness(90%) sepia(10%) saturate(1000%) hue-rotate(20deg);
 }
-#button{
+
+#button {
     background-color: transparent;
+    border: transparent;
 }
-#botaoLogo{
+
+#botaoLogo {
     background-color: transparent;
     cursor: pointer;
 }
-#calendario:hover,
+
+#calendario:hover,#calendario:focus-within,
 #iconeImagemdnv:hover {
     filter: brightness(90%);
     transition: 0.6s;
     cursor: pointer;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
 #imagem {
-    margin-top: 1%;
+    
     display: flex;
     justify-content: center;
 }
 
 #imagem>img {
-   
-background-size: contain;
+    background-size: contain;
     border-radius: 20px;
 }
-
+#imagemTexto{
+    background-color: antiquewhite;
+}
 h3,
 h4,
 #explanation {
     padding: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
-    background: radial-gradient(rgba(0, 0, 0, 0.725), rgba(0, 0, 0, 0.672), rgba(0, 0, 0, 0.721));
+    background-color: black;
     font-size: 24px;
     text-align: center;
     letter-spacing: 3px;
     margin: auto;
+    
+   
 }
 
 #dataPalavra,
@@ -140,8 +159,7 @@ h4,
 
 }
 
-#dataPalavra:hover 
-{
+#dataPalavra:hover {
 
     text-decoration: overline rgba(136, 112, 70, 0.3);
     color: aqua;
