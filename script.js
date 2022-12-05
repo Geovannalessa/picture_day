@@ -21,14 +21,25 @@ async function api(){
     usarApi(dados);
 }
 function usarApi(dados){
-    document.querySelector("#container").innerHTML = 
+    if(dados.media_type === "image"){
+        document.querySelector("#container").innerHTML = 
     `<section id="imagem">
         <img src="${dados.url}" alt="">
     </section>`;
-    
+
     document.querySelector("#container").innerHTML += ` <h3> ${dados.title}  </h3>`;
     document.querySelector("#container").innerHTML += ` <h4> Image Credit & Copyright: ${dados.copyright}  </h4>`;
     document.getElementById("explanation").innerHTML = `<strong>Explanation:</strong> ${dados.explanation}` ;
+    } else{
+        document.querySelector("#container").innerHTML = 
+        `<section>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0fKBhvDjuy0?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>`;
+    document.querySelector("#container").innerHTML += ` <h3> ${dados.title}  </h3>`;
+    document.querySelector("#container").innerHTML += ` <h4> Image Credit & Copyright: ${dados.copyright}  </h4>`;
+    document.getElementById("explanation").innerHTML = `<strong>Explanation:</strong> ${dados.explanation}` ;
+    }
+    
     // alert('Aperte no icone do site, para fazer a busca novamente!')
 }
 
