@@ -7,88 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- icones -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./public/history.css">
+   <link rel="shortcut icon" href="./public/img/planet.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./public/home.css">
     <title>Picture Day</title>
 </head>
 <!-- 2017-01-07 -->
-<body>
 
 <body>
     <header>
         <ul>
             <li class="calendario" id="calendario">
-                <img id="iconeCalendario" src="https://www.reshot.com/preview-assets/icons/XKRBJ7E6WC/schedule-XKRBJ7E6WC.svg" alt="">
-                <input id="date" type="date" >
+                <img id="iconeCalendario"
+                    src="https://www.reshot.com/preview-assets/icons/XKRBJ7E6WC/schedule-XKRBJ7E6WC.svg" alt="">
+                <input id="date" type="date">
             </li>
             <li>
-                <img id="logo" src="./public/img/Bege Flor Superminimalismo Texto Curvado Logotipo.png" alt="">
+                <button id="botaoLogo">
+                    <img id="logo" src="./public/img/Bege Flor Superminimalismo Texto Curvado Logotipo.png" alt="">
+                </button>
             </li>
             <li id="iconeImagem">
                 <button id="button">
-                    <img id="iconeImagemdnv" src="https://www.reshot.com/preview-assets/icons/XCG3UAVP6Z/note-XCG3UAVP6Z.svg" alt="">
+                    <img id="iconeImagemdnv"
+                        src="https://www.reshot.com/preview-assets/icons/XCG3UAVP6Z/note-XCG3UAVP6Z.svg" alt="">
                 </button>
             </li>
+            
         </ul>
     </header>
-
     <main>
         <section id="container"></section>
-        
         <section>
             <p id="explanation">
-                Escolha uma <i id="dataPalavra"> data</i>  e clique no icone  <i id="notePalavra"> notes</i>!
-                <br>
-                <i><strong>
-                    Após dê reload!
-                </strong></i>
+                Escolha uma <i id="dataPalavra"> data</i> e clique no icone <i id="notePalavra"> notes</i>!
             </p>
         </section>
-
     </main>
-    <script>
-        const button = document.getElementById('button');
-        const dataPalavra = document.getElementById("dataPalavra")
-        const notePalavra = document.getElementById("notePalavra")
-        const calendario = document.getElementById('calendario');
-        const note = document.getElementById("iconeImagemdnv");
-
-        button.addEventListener("click", ()=>{api()});
-        dataPalavra.addEventListener("mouseover",mudarCorDate)    
-        dataPalavra.addEventListener("mouseout",tirarCorDate)  
-        notePalavra.addEventListener("mouseover",mudarCorNote)    
-        notePalavra.addEventListener("mouseout",tirarCorNote)  
-        async function api(){
-            const key = '7r4h5XIPQTRWXCg7yDfCGdAyPP8Qslu8wUud3tXf';
-            const dateInput = document.getElementById('date').value;
-            const data = await fetch (`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${dateInput}`);
-            const result = await data.json();
-            const dados = result;
-            console.log(result);
-            usarApi(dados);
-        }
-        function usarApi(dados){
-            document.querySelector("#container").innerHTML += ` <button onClick="window.location.reload()"> reload  </button>`;
-            document.querySelector("#container").innerHTML += 
-            `<section id="imagem">
-                <img src="${dados.url}" alt="">
-            </section>`;
-            document.querySelector("#container").innerHTML += ` <h3> ${dados.title}  </h3>`;
-            document.querySelector("#container").innerHTML += ` <h4> Image Credit & Copyright: ${dados.copyright}  </h4>`;
-            document.getElementById("explanation").innerHTML = `<strong>Explanation:</strong> ${dados.explanation}` ;
-        }
-        function mudarCorDate(){
-            calendario.style.filter = 'brightness(100%)';
-        }
-        function tirarCorDate(){
-            calendario.style.filter = 'brightness(50%)';
-        }
-        function mudarCorNote(){
-            note.style.filter = 'brightness(100%)';
-        }
-        function tirarCorNote(){
-            note.style.filter = 'brightness(50%)';
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
